@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:f="jakarta.faces.core"
+      xmlns:pt="jakarta.faces.passthrough">
+<h:head>
+    <title>JSF Drive CRUD</title>
+    <link rel="stylesheet" href="css/style.css" />
+</h:head>
+<h:body>
+    <div class="container" style="width: 900px;">
+        <h2>JSF Practical: Placement Drive CRUD</h2>
+        <h:form>
+            <h:inputText value="#{driveBean.companyName}" required="true" pt:placeholder="Company" />
+            <h:inputText value="#{driveBean.jobRole}" required="true" pt:placeholder="Role" />
+            <h:inputText value="#{driveBean.packageLpa}" required="true" pt:placeholder="Package" />
+            <h:inputText value="#{driveBean.arrivalDate}" required="true" pt:placeholder="YYYY-MM-DD" />
+            <h:inputText value="#{driveBean.minCgpa}" required="true" pt:placeholder="Min CGPA" />
+            <h:commandButton value="Add" action="#{driveBean.addDrive}" />
+        </h:form>
+        <h:dataTable value="#{driveBean.companies}" var="c">
+            <h:column><f:facet name="header">ID</f:facet>#{c.companyId}</h:column>
+            <h:column><f:facet name="header">Company</f:facet>#{c.companyName}</h:column>
+            <h:column><f:facet name="header">Role</f:facet>#{c.jobRole}</h:column>
+            <h:column><f:facet name="header">Package</f:facet>#{c.packageLpa}</h:column>
+            <h:column><f:facet name="header">Date</f:facet>#{c.arrivalDate}</h:column>
+            <h:column><f:facet name="header">Action</f:facet><h:form><h:commandButton value="Delete" action="#{driveBean.deleteDrive(c.companyId)}" /></h:form></h:column>
+        </h:dataTable>
+    </div>
+</h:body>
+</html>

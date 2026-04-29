@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Campus Placement</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" style="width: 400px;">
+        <h2>Student Registration</h2>
+        
+        <form action="auth" method="post">
+            <input type="text" name="fullName" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            
+            <select name="branch" required style="width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">
+                <option value="" disabled selected>Select Branch</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+                <option value="ELECTRICAL">ELECTRICAL</option>
+            </select>
+
+            <input type="number" name="cgpa" step="0.01" placeholder="Current CGPA" required>
+            <input type="number" name="passoutYear" placeholder="Passout Year (e.g., 2026)" required>
+
+            <input type="hidden" name="action" value="register">
+
+            <button type="submit" style="background-color: #28a745;">Register Now</button>
+        </form>
+        
+        <a href="login.html">Already have an account? Login</a>
+    </div>
+</body>
+</html>

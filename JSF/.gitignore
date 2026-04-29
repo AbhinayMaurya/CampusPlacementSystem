@@ -1,0 +1,13 @@
+# 1. Ignore Secrets (MOST IMPORTANT)
+src/main/resources/db.properties
+
+# 2. Ignore Compiled Java Classes (Cleanup)
+*.class
+bin/
+lib/
+
+# 3. Ignore IDE Settings (Optional)
+.vscode/
+.settings/
+.classpath
+.project

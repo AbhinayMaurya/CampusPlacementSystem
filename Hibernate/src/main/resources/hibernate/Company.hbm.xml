@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "https://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.campus.model.Company" table="companies">
+        <id name="companyId" column="company_id"><generator class="identity"/></id>
+        <property name="companyName" column="company_name"/>
+        <property name="jobRole" column="job_role"/>
+        <property name="packageLpa" column="package_lpa"/>
+        <property name="arrivalDate" column="arrival_date" type="date"/>
+        <property name="minCgpa" column="min_cgpa"/>
+    </class>
+</hibernate-mapping>
